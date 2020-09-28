@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable01.html</title>
+    <script>
+        var num;
+        document.write('<h2>초기화 전</h2>');
+        document.write('num의 자료형 :'+typeof(num)+' num에 저장된 값: '+num);
+
+        num=100;
+
+        document.write('<h2>초기화 후</h2>');
+        document.write('num의 자료형 :'+typeof(num)+' num에 저장된 값: '+num);
+
+        num=3.14;
+
+        document.write('<br/>num의 자료형 :'+typeof(num)+' num에 저장된 값: '+num);
+
+        num=true;
+
+        document.write('<br/>num의 자료형 :'+typeof(num)+' num에 저장된 값: '+num);
+
+        num="문자열 입니다";
+
+        document.write('<br/>num의 자료형 :'+typeof(num)+' num에 저장된 값: '+num);
+
+        document.write('<h2>변수 선언과 동시에 초기화</h2>');
+        var str="자바스크립트";
+
+        document.write('<h2>,로 구분해서 동시에 변수 여러개 선언하기</h2>');
+        var num1=10,num2,str1='자스',str2;
+        document.write(num1+num2+'</br>');
+        document.write(typeof(num1+num2)+'</br>');
+
+        if(isNaN(num1+num2))
+            document.write('num1+num2는 NaN이다'+'</br>')
+        else
+        document.write('num1+num2는 NaN이아니다'+'</br>')
+
+        document.write(str1+str2+'</br>');
+        document.write(typeof(str1+str2)+'</br>');
+
+        document.write('<h2>자스의 기타 자료형</h2>');
+
+        var date = new Date();
+        document.write('date의 자료형 :'+typeof(date)+' ,date에 저장된 값 :'+date+'</br>');
+
+        var nullvar = null;
+        document.write('null var의 자료형 :'+typeof(nullvar)+',nullvar에 저장된 값 : '+nullvar+'</br>');
+
+        var obj ={};
+        document.write('obj의 자료형 :'+typeof(obj)+',obj 저장된 값 : '+obj+'</br>');
+
+        console.log('obj의 자료형 :'+typeof(obj)+',obj 저장된 값 : '+obj);
+        obj.name ='가길동';
+        obj.age=20;
+        obj.walk=function(){
+            document.write(this.name+'가 걷다'+'</br>');
+        };
+        document.write('이름 :'+obj.name+ ' 나이 :'+obj.age+'</br>');
+        obj.walk();
+
+        var obj2 ={id :'KIM', pwd :'1234',name :'김길동',eat :function(food){
+            document.write(this.name+'이(가) '+food+'를 먹다'+'</br>');
+        }};
+        obj2.toString = function(){
+            return '{아이디 : ' +this.id+',비번 :' +this.pwd +',이름 : '+this.name+'}';
+        };
+        document.write('obj2의 자료형 :'+typeof(obj2)+' ,obj2에 저장된 값 :'+obj2+'</br>');
+        console.log(obj2);
+        obj2.eat('피자')
+
+        const pi =3.14;
+        document.write('PI의 자료형 :' +typeof(pi));
+
+        var f = function(a,b){return a+b};
+        document.write('</br> f의 자료형 :' +typeof(f)+', f에 저장된 값 :'+f+'</br>')
+
+        alert(f(3,12))
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
