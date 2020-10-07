@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form13_2</title>
+</head>
+<body>
+    <div>
+        <h2>form태그의 하위 요소들(태그들)</h2>
+        <h3>input계열의 type="text"</h3>
+        기본 텍스트 상자 :<input type="text"/></br>
+        속성 추가:<input type="text" size='10' maxlength="5" value="기본텍스트" disabled/>
+        주민 번호 :<input type ="text" size='6' maxlength="6"/> - <input type="text" size='10' maxlength="10"/></br>
+        홈페이지 :<input type="text" value='http://'/>
+
+        <h3>input계열의 type="password"</h3>
+
+        기본 패스워드 :<input type="password" /></br>
+        패스워드 지정 :<input type="password" value="1234" /></br>
+
+        <h3>type="checkbox"</h3>
+        <fieldset>
+            <legend>당신의 관심사항은 ?</legend>
+
+            <form>
+                <input type="checkbox" name='inter' value ='pol' id="pol"/><label for="pol">정치</label>
+                <input type="checkbox" name='inter' value ='eco' checked/>경제
+                <input type="checkbox" name='inter' value ='ent'/>연예
+                <input type="checkbox" name='inter' value ='spo' id="spo"/><label for="spo">스포츠</label>
+                <input type="submit" value="확인"/>
+            </form>
+        </fieldset>
+        <h3>type="radio"</h3>
+
+        <fieldset>
+            <legend>당신의 성별은 ?</legend>
+
+            <form>
+                <input type="radio" name='gender' value ='man' id="man"/><label for="man">남자</label>
+                <input type="radio" name='gender' value ='woman' checked/>여자
+                <input type="radio" name='gender' value ='trans'/>젠더
+                <input type="submit" value="확인"/>
+            </form>
+        </fieldset>
+
+        <h3>type="file"</h3>
+        기본 :<input type="file"/><br/>
+        속성 추가:<input type="file" size="50" value="기본 텍스트"/><br/>
+
+        <h3>type="hidden"</h3>
+        <form>
+            <input type="hidden" name="no" value="110"/>
+            아이디 <input type="text" name='id'/>
+            이름 <input type="text" name='name'/>
+            <input type="submit" value="확인"/>
+        </form>
+
+        <h3>다양한 버튼들</h3>
+        <fieldset>
+            <legend>각종버튼</legend>
+            <form action="https://www.nate.com">
+                아이디 :<input type="text" name='id' placeholder="아이디를 입력하세요"/>
+                성별 :<input type="radio" name='gender' value='man'/>남자
+                      <input type="radio" name='gender' value='woman'/>여자
+
+                관심과목 :<input type="checkbox" name='subject' value='자바'/>자바
+                         <input type="checkbox" name='subject' value='html5' checked/>html5
+                         <input type="checkbox" name='subject' value='css3'/>css3
+
+
+                <input type="submit" value="submit버튼"/>
+                <input type="reset" value="reset버튼"/>
+                <input type="button" value="button버튼"/>
+
+                <button>버튼태그</button>
+                <input type="image" alt="이미지 버튼" src="../images/button.png" style="width: 100px; height: 32px;"/>
+            </form>
+            
+        </fieldset>
+
+        <h3>&lt; select &gt;</h3>
+        <form>
+            <select name='grade' size="1" >
+                <option value=''>>> 학력 선택 <<</option>
+                <option value='ele'>초등학교</option>
+                <option value='mid'>중학교</option>
+                <option value='hig' selected>고등학교</option>
+                <option value='univ'>대학교</option>
+            </select>
+            <input type="submit" value='확인'/>
+        </form>
+        <h3>&lt;textarea &gt;</h3>
+        기본 :<textarea></textarea>
+        속성추가 :<textarea cols="50" rows="10" value ="기본텍스트"></textarea>
+        기본텍스트 적용: <textarea cols="50" rows="10">기본 텍스트</textarea>
+
+    </div>
+</body>
+</html>

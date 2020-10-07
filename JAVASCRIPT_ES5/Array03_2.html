@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array03_2.html</title>
+    <script>
+        document.write('<h2>배열의 주요 함수</h2>');
+
+        var method=[];
+        document.write('<h3>1. 배열 요소 추가 : 인덱스 혹은 push() 함수</h3>');
+        
+        method[0] =100;
+        method.push(200);
+        method.unshift(300)
+
+        method.forEach(function(item){
+            document.write(item+'<br/>')
+        });
+
+        document.write('<h3>2. 배열 요소 삭제</h3>');
+        document.write('삭제한 배열 요소 :'+method.pop());
+        document.write('<br/> 마지막 요소 삭제후 배열 크기 :'+method.length)
+
+        document.write('<br/>삭제한 배열 요소 :' +method.shift());
+        document.write('<br/> 첫번째 요소 삭제후 배열 크기 :'+method.length)
+
+        document.write('<h4> 삭제한 후 출력</h4>');
+
+        for(var i=0; i<method.length; i++){
+            document.write('method['+i+'] ='+method[i] +'<br/>')
+        }
+
+        document.write('<h3>3.배열 요소 추출</h3>');
+        method.push(200);
+        method.push(300);
+        method.push(400);
+        method.push(500);
+        method.slice(3).forEach(function(e){
+            document.write(e+'<br/>');
+        });
+        document.write('<h4>slice후 원본배열 출력</h4>');
+            method.forEach(function(e){
+            document.write(e+'<br/>');
+        });
+        document.write('<hr/>')
+        method.slice(3,5).forEach(function(e){
+            document.write(e+'<br/>');
+        });
+
+        document.write('<hr/>')
+        method.slice(-3,5).forEach(function(e){
+            document.write(e+'<br/>');
+        });
+
+        document.write('<h4>splice 한 배열</h4>');
+        method.splice(1,3,'이백','삼백','사백').forEach(function(item){
+            document.write(item+'<br/>');
+        });
+
+        document.write('<h4>splice후 원본배열 출력</h4>');
+            method.forEach(function(e){
+            document.write(e+'<br/>');
+        });
+
+        document.write('<h3>4.배열 요소의 인덱스 찾기</h3>');
+        document.write(method.indexOf('이백')+'<br/>');
+        document.write(method.indexOf(1000)+'<br/>');
+        method.push(100)
+        document.write(method.lastIndexOf(100)+'<br/>');
+
+        document.write('<h3>5. join 함수</h3>');
+        document.write(method.join()+'<br/>')
+        document.write(method.join('★')+'<br/>')
+
+        document.write('<h3>6. reverse 함수</h3>');
+        method.reverse().forEach(function(item){
+            document.write(item+'<br/>')
+        })
+
+        document.write('<h3>6. reverse후 원본 배열</h3>');
+        method.forEach(function(item){
+            document.write(item+'<br/>')
+        });
+
+        document.write('<h3>7. sort 함수</h3>');
+        
+        var newArray =[5,2,1,4,3];
+
+        newArray.sort().forEach(function(item){
+            document.write(item+'<br/>')
+        });
+
+        document.write('<h3> sort후 원본 배열</h3>');
+        newArray.forEach(function(item){
+            document.write(item+'<br/>')
+        });
+
+        newArray.sort(function(s1,s2){return s2-s1});
+
+        document.write('<h4> sort한후 원본 배열 내림차순 </h4>');
+        
+        newArray.forEach(function(item){
+            document.write(item+'<br/>')
+        });
+
+        document.write('<h3>8. concat 함수</h3>');
+
+        newArray.concat(6,7,8,9,10).forEach(function(e){
+            document.write(e+'<br/>')
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function noParamNoReturn(){
+
+            document.write('==============Menu==============</br>');
+            document.write('1.계속 2.나가기 </br>');
+            document.write('==============Menu==============</br>');
+        }
+
+        noParamNoReturn();
+
+        var yesParamNoReturn = function(start,end){
+            var total=0; //지역변수
+            for(var i=start; i<=end; i++){
+                total+=i;
+
+            }
+            document.write(total);
+            
+        };
+
+        yesParamNoReturn(1,10);
+        document.write('</br>');
+
+        var noParamYesReturn = function(){
+            var name = prompt('이름 입력 ?','');
+            var age = prompt('나이 입력 ?','20')
+            
+            return '이름 :'+name+',나이 :'+age; 
+        };
+
+        document.write(noParamYesReturn());
+
+        function yesParamYesReturn(num1,num2){
+            return num1 >num2 ?num1:num2;
+        }
+
+        document.write('<br/>최대값 :'+yesParamYesReturn(10,20));
+
+        var plus =(function(num1,num2){return num1+num2})(10,20);
+        document.write('</br>'+typeof plus);
+        document.write('</br>'+plus);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

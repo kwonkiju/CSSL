@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array03_1.html</title>
+    <script>
+        var array = new Array(5);
+        document.write('배열 크기 :' +array.length);
+        document.write('</br>array의 자료형 '+typeof array+', array의 값 '+array);
+        console.log(array);
+        document.write('<h2>배열 초기화 전 </h2>');
+        document.write('<ul>');
+        for(var i=0; i<array.length; i++){
+            document.write('<li>array['+i+']='+array[i]+'</li>')
+        }
+        document.write('</ul>');
+
+        array[0]=100;
+        array[1]= new Date();
+        array[2] =3.14;
+        array[3] =true;
+        array[4]='자바 스크립트';
+        array[5] =100; //자바와 다르게 방이 새롭게 추가됨
+        array.push(200);
+        array.push(300);
+        array.push(400);
+        array.push(500);
+
+        document.write('<h2>배열 초기화 후 </h2>');
+        document.write('<ul>');
+        for(var i=0; i<array.length; i++){
+            document.write('<li>array['+i+']='+array[i]+'</li>')
+        }
+        document.write('</ul>');
+
+        var initArray =new Array('홍길동',20,'가산동',new Date());
+
+        document.write('<ul>');
+        for(var i=0; i<initArray.length; i++){
+            document.write('<li>initArray['+i+']='+initArray[i]+'</li>')
+        }
+        document.write('</ul>');
+
+        var initNoNew =['한소인',10,'자바전문과정',{owner:'가길동',est:1970}];
+        document.write('자료형 :' +typeof(initNoNew));
+        document.write('<h2>배열 선언과 동시에 초기화(new 연산자 사용안함)');
+        document.write('<ul>');
+        for(var i=0; i<initNoNew.length; i++){
+            console.log(typeof initNoNew[i] =='object');
+            if(typeof initNoNew[i] !='object')
+                document.write('<li>initNoNew['+i+']='+initNoNew[i]+'</li>');
+            else
+               document.write('<li>initNoNew['+i+']=대표자 :'+initNoNew[i].owner+', 설립일 :'+initNoNew[i].est+'</li>');
+        }
+        document.write('</ul>');
+
+        document.write('<h2> 배열 선언 (new 사용, 크기 미지정)</h2>');
+        var nosize = new Array();
+        document.write('배열 크기 :'+nosize.length);
+        nosize[4] =true;
+
+        document.write('<ul>');
+        for(var i=0; i<nosize.length; i++){
+            document.write('<li>nosize['+i+']='+nosize[i]+'</li>')
+        }
+        document.write('</ul>');
+        
+       
+
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            학생의 평균 구하기
+        </legend>
+        학생 수 입력 : <input type ="text" id ="students"/>
+        <button onclick='getAverage() '>평균 구하기</button>
+    </fieldset>
+    <script>
+        var score = [];
+
+        function getAverage(){
+            var textBox = document.getElementById('students');
+            console.log('입력값 :%s, textBox.value의 자료형 :%s',textBox.value,typeof(textBox.value));
+
+            var total=0;
+            for(var i=0; i<parseInt(textBox.value); i++){
+                score[i]=parseInt(prompt(i+1+'번째 점수 입력 ?'));
+                total+= score[i];
+            }
+
+            var avg = total/parseInt(textBox.value);
+            console.log('총점 :%d, 평균:%s ',total,avg);
+        }
+        
+    </script>
+</body>
+</html>

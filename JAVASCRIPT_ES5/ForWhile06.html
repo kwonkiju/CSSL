@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForWhile06.html</title>
+    <script>
+        for(var i=0; i<5; i++){
+            var gVar='for문 안에서 선언된 변수';
+            document.write(i+'<br/>');
+        }
+
+        document.write('for문 끝난후'+i+'    '+gVar+'<br/>');
+    </script>
+</head>
+<body>
+    <script>
+
+        document.write('<h2> for문 </h2>');
+        for(var k=0; k<5 ;k++){
+            for(var j=0; j<5; j++){
+                if(k==j) document.write('1 ');
+                else document.write('0 ');
+            }
+            document.write('<br/>');
+        }
+
+        document.write('<h2> while문 </h2>');
+            var table ="<table style='text-align:center;border-spacing:2px;background-color:red;width:200px'>";
+
+                i=k=0;
+                while(i<5){
+                    table+='<tr style="background-color:white">'
+                    while(k<5){
+                        if(i==k)
+                            table+='<td>'+1 +' '+'</td>';
+                        else
+                            table+='<td>'+0 +' '+'</td>';
+                        k++;
+                    }
+                    table+='</tr>';
+                    k=0;
+                    i++;
+                }
+
+            table +='</table>';
+            document.write(table);
+
+
+            document.write('<h2> for문으로 구구단 </h2>');
+
+            i=k=0;
+            table ="<table style='text-align:center; border-spacing:2px;background-color:red;'>";
+
+            for(i=2; i<=9; i++){
+                table +="<tr style ='background-color:white;'>";
+                for(j=1; j<=9; j++){
+                    table +="<td>"+i+" * "+j+" = "+i*j+"</td>";
+                }
+                table +="</tr>";
+            }
+
+            table  +="</table>";
+            document.write(table);
+        
+        
+
+       
+
+    </script>
+
+    
+    
+</body>
+</html>

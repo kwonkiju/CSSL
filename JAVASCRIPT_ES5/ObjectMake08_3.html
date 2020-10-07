@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectMake08_3.html</title>
+    <script>
+        var brace ={};
+        console.log('brace의 자료형 :'+typeof brace);
+
+        brace.name ='가길동';
+        brace.age =20;
+        console.log(brace);
+        console.log('-----------속성 출력 ----------');
+        console.log(brace.name);
+        
+        console.log(brace.age);
+
+        brace.print = function(){
+            console.log(this);
+
+            console.log(this.name+this.age);
+
+        };
+
+        brace.print();
+
+        brace.friend = function(name,age){
+            console.log('%s 친구 이름은 %s 이고 나이는 %d 살이다',this.name,name,age);
+        };
+
+        brace.friend('철수',20);
+
+        console.log('%O',brace);
+
+        var jsonToString=JSON.stringify(brace); //json형태를 문자열로 반환
+        console.log(jsonToString)
+
+        var brace2 ={
+            num1:10,
+            'num2':'20',
+            add :function(){return this.num1+parseInt(this.num2);},
+            minus :function(){return this.num1-this.num2}
+                    };
+
+        console.log(brace2.num1);
+        console.log(brace2.num2);
+        console.log(brace2.add());
+        console.log(brace2.minus());
+
+        brace2.num3=30;
+        console.log(JSON.stringify(brace2));
+
+        //delete brace2.num3; 삭제 2가지 방법
+        delete brace2['num3'];
+        console.log(JSON.stringify(brace2));
+
+        function Person(name,age){
+            
+            this.name = name; //person을 new로 객체화 할때 객체화된 person
+            this.age = age;
+            this.addr ='가산동';
+            console.log(this);
+        }
+
+        //Person('가길동',30);
+
+        var person1 = new Person('다길동',20);
+        console.log(typeof person1);
+        console.log(person1);
+
+        console.log(JSON.stringify(person1));
+
+        Person.prototype.print =function(){
+            console.log('%s, %s, %s',this.name,this.age,this.addr);
+        };
+
+        person1.print();
+
+        Person.getPerson=function(args){
+            console.log('이름:%s, 나이:%s',args.name,args.age);
+        };
+
+        Person.getPerson(person1);
+
+        var person2 =new Person('마길동',20);
+        person2.addr='청담동';
+        person2.print();
+
+        var arr =new Array();
+        console.log(arr);
+        console.log(arr instanceof Array);
+        console.log(person2 instanceof Person);
+        console.log(person2 instanceof Array);
+        console.log(person2 instanceof Object);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

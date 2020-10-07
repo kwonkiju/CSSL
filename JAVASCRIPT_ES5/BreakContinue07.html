@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakContinue07.html</title>
+    <script>
+        var i=0;
+        while(-1){
+            i++;
+            document.write(i);
+            if(i==3) break;
+            document.write('break문 이후<br/>');
+            if(i % 2 ==0) continue;
+            document.write('continue문 이후<br/>');
+            i++;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

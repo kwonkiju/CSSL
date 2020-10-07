@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video19.html</title>
+</head>
+<body>
+    <h2>기본 비디오 태그</h2>
+    <video src="Media/video.mp4" controls width="200" height="200">
+
+        여기를 <a href="Media/video.mp4">클릭</a>하세요</video>
+
+        <h2>source 하위 태그 사용 태그</h2>
+    <video controls width="200" height="200" loop>
+        <source src="Media/video.3gp" type="video/3gpp"/>
+        <source src="Media/video.mp4" type="video/mp4"/>
+    </video>
+    <h2>커스텀 비디오</h2>
+    <div>
+        <video width="300" height="200" id="video" src="Media/video.mp4" hidden></video>
+    </div>
+
+    <div>
+        <progress value="0" id="progress"></progress>
+    </div>
+    <div>
+        <input type="button" value="PLAY" onclick="play();"/>
+        <input type="button" value="PAUSE" onclick="pause();"/>
+        <input type="button" value="STOP" onclick="stop();"/>
+        &nbsp;&nbsp;<span id="current"></span> / <span id="total"></span>
+    </div>
+
+    <script>
+        var video=document.getElementById('video');
+
+        var current_span =document.getElementById('current');
+        var total_span =document.getElementById('total');
+        var progress =document.getElementById('progress');
+
+        video.ontimeupdate=function(){
+
+            total_span.innerHTML=video.duration;
+            current_span.innerHTML=video.currentTime;
+
+            progress.max =video.duration;
+            progress.value =video.currentTime;
+        };
+
+        var play=function(){
+            video.hidden='';
+          video.play();  
+        };
+
+        var pause=function(){
+            video.pause();  
+        };
+
+        var stop=function(){
+          if(video.played){
+            video.currentTime=0;
+            video.pause();
+          }
+
+        };
+    </script>
+</body>
+</html>

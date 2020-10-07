@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio17.html</title>
+</head>
+<body>
+    <h2>기본 audio 태그</h2>
+    <audio src="Media/audio.mp3" controls autoplay>
+        audio태그를 지원하지 않은 브라우저 입니다<br/>
+        여기를 <a href="Media/audio.mp3">클릭</a> 하세요
+    </audio>
+
+    <h2>기본 audio 하위태그인 &lt; source &gt; 태그 사용</h2>
+    <audio controls>
+        <source src="Media/audio.ogg" type="audio/ogg"/>
+        <source src="Media/audio.mp3" type="audio/mp3"/>
+    </audio>
+
+    <h2>커스텀 오디오</h2>
+    <div>
+        <progress value="0" id="progress"></progress>
+    </div>
+    <div>
+        <input type="button" value="PLAY" onclick="play();"/>
+        <input type="button" value="PAUSE" onclick="pause();"/>
+        <input type="button" value="STOP" onclick="stop();"/>
+        &nbsp;&nbsp;<span id="current"></span> / <span id="total"></span>
+    </div>
+
+    <script>
+        var audio =new Audio('Media/audio.mp3');
+
+        console.log('자료형 %s,audio %s',typeof audio,audio);
+
+        var current_span =document.getElementById('current');
+        var total_span =document.getElementById('total');
+        var progress =document.getElementById('progress');
+
+        audio.addEventListener('timeupdate' ,function(){
+
+            total_span.innerHTML=audio.duration;
+            current_span.innerHTML=audio.currentTime;
+
+            progress.max =audio.duration;
+            progress.value =audio.currentTime;
+        });
+
+        var play=function(){
+          audio.play();  
+        };
+
+        var pause=function(){
+          audio.pause();  
+        };
+
+        var stop=function(){
+          if(audio.played){
+              audio.currentTime=0;
+              audio.pause();
+          }
+
+        };
+    </script>
+</body>
+</html>

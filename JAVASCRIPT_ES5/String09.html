@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String09.html</title>
+    <script>
+        var str1='안녕 자바 스크립트';
+        var str2="Hello JavaScript";
+        var str3='Hi JS';
+        var str4 = new String('HI JS');
+
+        console.log('str1의 길이 :%s',str1.length);
+        console.log('str2의 길이 :%s',str2.length);
+        console.log('str4의 길이 :%s',str4.length); //렝스는 함수가 아니라 ()붙이지 않음
+
+        document.write('<h2함수로 텍스트 효과주기 </h2>');
+        document.write('볼드체(함수) :'+str1.bold()+'</br>');
+        document.write('볼드체(태그) :<b>'+str1+'</b></br>');
+        document.write('이탤릭체(함수) :'+str1.italics()+'</br>');
+        document.write('볼드체(태그) :<i>'+str1+'</i></br>');
+        document.write('함수 :'+str1.italics().bold()+'</br>');
+        document.write('태그 :<i><b>'+str1+'</i></b></br>');
+        document.write('가운데 줄긋기(함수) :'+str1.strike()+'</br>');
+        document.write('가운데 줄긋기(태그) :<strike>'+str1+'</strike></br>');
+        var href="https://www.nate.com";
+        document.write('링크걸기(함수) :'+str1.link(href)+'</br>');
+        document.write('링크걸기(태그) :<a href="'+href+'">'+str1+'</a></br>');
+
+        document.write('<h2> 대소문자로 변경</h2>');
+        document.write('대문자 :'+str3.toUpperCase()+'</br>');
+        document.write('소문자 :'+str4.toLowerCase()+'</br>');
+
+        document.write('<h2>charAt(인덱스)</h2>');
+        document.write('str3에서 인덱스가 3인 문자 :'+str3.charAt(3)+'</br>');
+        document.write('자바스크립트'.charAt(2));
+
+        document.write('<h2>substring(시작인덱스,끝인덱스)</h2>');
+        document.write('ACADEMY'.substring(3,7));
+
+        document.write('<h2>substr(시작인덱스,갯수)</h2>');
+        document.write('ACADEMY'.substr(3,4));
+
+        document.write('<h2>charCodeAt(인덱스)</h2>');
+        document.write('ACADEMY'.charCodeAt(3)+'<br/>');
+
+        document.write('<h2>fromCharCode(코드값)</h2>');
+        document.write(String.fromCharCode('ACADEMY'.charCodeAt(3)));
+
+        document.write('<h2> 문자열을 배열처럼</h2>');
+        for(var i=0; i<str3.length; i++){
+            document.write(str3[i]+'</br>');
+        }
+        
+        function pr1(str){
+            var isNumber =true;
+           
+            for(var i=0;i<str.length;i++){
+                if(!(str[i]>=0 && str[i]<=9)){
+                    return false;
+                }
+            }
+                return isNumber;
+            
+        };
+        var str5 = "1";
+        document.write(pr1(str5));
+
+        document.write('<h2>string[] split(구분자)</h2>');
+        var tel="010.1234.010";
+        var arr=tel.split(".");
+        document.write(arr[0]+'</br>');
+
+        document.write(arr.indexOf("010")); //문자열의 인덱스값 반환
+        document.write(arr.lastIndexOf("010")); //문자열의 뒤에서부터 인덱스값 반환
+        document.write('</br>'); 
+        /*이메일 주소에서 @과 . 사이에 있는 값만 얻어 오자*/
+        var email =['kim@naver.com','park@cyworld.com','lee@nate.com','kwon@naver.com'];
+
+        function pr2(email){
+           
+            for(var i=0;i<email.length;i++){
+             document.write(email[i].substring(email[i].indexOf("@")+1,email[i].indexOf(".")));
+             document.write('</br>');    
+            }
+            
+        };
+
+        pr2(email);
+        
+
+
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
